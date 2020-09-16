@@ -1,0 +1,35 @@
+{
+  "name": "law-office-manager-test",
+  "description": "Law Office Management Extension Test",
+  "version": "1.0.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "law-office-manager-test",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.court.gov.il:8000/NGCS.Web.Secured/Viewer/*"
+      ],
+      "js": [
+        "trigger.js"
+      ],
+      "css": [
+        "popup.css"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
